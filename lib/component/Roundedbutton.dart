@@ -33,3 +33,13 @@ class RoundedButton extends StatelessWidget {
     );
   }
 }
+
+
+// RoundedButton(
+//                     colour: Colors.blueAccent,
+//                     title: 'Sign Up',
+//                     onPressed: () => print('Signup Page'),
+//                     // {
+//                     //   Navigator.pushNamed(context, '');
+//                     // }
+//                   ),
