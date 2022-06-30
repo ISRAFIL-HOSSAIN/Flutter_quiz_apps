@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:quiz_apps/screen/home/homepage.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -52,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     Timer(const Duration(seconds: 4), () {
       setState(() {
-        Navigator.pushReplacement(context, PageTransition(const IntroductionPage()));
+        Navigator.pushReplacement(context, PageTransition(const HomePage()));
       });
     });
   }
@@ -144,26 +145,4 @@ class PageTransition extends PageRouteBuilder {
           },
         );
 }
-
-// class SecondPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.white,
-//       appBar: AppBar(
-//         brightness: Brightness.dark,
-//         backgroundColor: Colors.deepPurple,
-//         centerTitle: true,
-//         title: Text(
-//           'YOUR APP\'S NAME',
-//           style: TextStyle(
-//             color: Colors.white,
-//             fontWeight: FontWeight.bold,
-//             fontSize: 20,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 
