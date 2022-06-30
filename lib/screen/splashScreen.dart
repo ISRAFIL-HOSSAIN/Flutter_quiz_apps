@@ -1,15 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:quiz_apps/screen/home/homepage.dart';
-
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({ Key? key }) : super(key: key);
-  
+  const SplashScreen({Key? key}) : super(key: key);
+
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
-
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
@@ -53,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     Timer(const Duration(seconds: 4), () {
       setState(() {
-        Navigator.pushReplacement(context, PageTransition(const HomePage()));
+        Navigator.pushNamed(context, 'welcome_screen');
       });
     });
   }
@@ -76,10 +73,9 @@ class _SplashScreenState extends State<SplashScreen>
           Column(
             children: [
               AnimatedContainer(
-                duration: const Duration(milliseconds: 3000),
-                curve: Curves.fastLinearToSlowEaseIn,
-                height: _height / _fontSize
-              ),
+                  duration: const Duration(milliseconds: 3000),
+                  curve: Curves.fastLinearToSlowEaseIn,
+                  height: _height / _fontSize),
               AnimatedOpacity(
                 duration: const Duration(milliseconds: 2000),
                 opacity: _textOpacity,
@@ -100,20 +96,20 @@ class _SplashScreenState extends State<SplashScreen>
               curve: Curves.fastLinearToSlowEaseIn,
               opacity: _containerOpacity,
               child: AnimatedContainer(
-                duration:const Duration(milliseconds: 3000),
-                curve: Curves.fastLinearToSlowEaseIn,
-                height: _width / _containerSize,
-                width: _width / _containerSize,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                child: Image.asset('assets/images/putishala.png')
-                // child: Text(
-                //   'YOUR APP\'S LOGO',
-                // ),
-              ),
+                  duration: const Duration(milliseconds: 3000),
+                  curve: Curves.fastLinearToSlowEaseIn,
+                  height: _width / _containerSize,
+                  width: _width / _containerSize,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: Image.asset('assets/images/putishala.png')
+                  // child: Text(
+                  //   'YOUR APP\'S LOGO',
+                  // ),
+                  ),
             ),
           ),
         ],
@@ -145,4 +141,3 @@ class PageTransition extends PageRouteBuilder {
           },
         );
 }
-

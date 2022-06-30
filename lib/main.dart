@@ -12,15 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     initialRoute: 'Splash_Screen',
-     routes: {
-      'Splash_Screen' : (context)=>SplashScreen(),
-      'welcom_screen' :(context) => WelcomeScreen(),
-      //'signup_screen' :(context) => SignUpScreen(),
-      //'login_screen' : (context) => LoginScreen(),
-      'home_screen' : (context)=> HomePage(),
-     },
-     
+      debugShowCheckedModeBanner: false,
+      initialRoute: 'Splash_Screen',
+      routes: {
+        'Splash_Screen': (context) => const SplashScreen(),
+        'welcome_screen': (context) => const WelcomeScreen(),
+        //'signup_screen' :(context) => SignUpScreen(),
+        //'login_screen' : (context) => LoginScreen(),
+        'home_screen': (context) => const HomePage(),
+      },
     );
   }
 }

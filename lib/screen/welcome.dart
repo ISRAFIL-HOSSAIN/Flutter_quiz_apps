@@ -14,25 +14,36 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+        body: Container(
+          
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              RoundedButton(
-                  colour: Colors.lightBlueAccent,
-                  title: 'Log In',
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'login_screen');
-                  },),
-              RoundedButton(
-                  colour: Colors.blueAccent,
-                  title: 'Sign Up',
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'signup_screen');
-                  }),
-            ],
+            children :[
+              Padding (
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  SizedBox(),
+                  RoundedButton(
+                    colour: Colors.lightBlueAccent,
+                    title: 'Log In',
+                    onPressed: () => print("login page"),
+                    // {
+                    //   // Navigator.pushNamed(context, '');
+                    // },
+                  ),
+                  RoundedButton(
+                    colour: Colors.blueAccent,
+                    title: 'Sign Up',
+                    onPressed: () => print('Signup Page'),
+                    // {
+                    //   Navigator.pushNamed(context, '');
+                    // }
+                  ),
+                ],
+              ),
+            ),],
           ),
         ),
       ),
