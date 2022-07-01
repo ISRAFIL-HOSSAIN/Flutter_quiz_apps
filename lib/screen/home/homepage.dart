@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'HomeScreen.dart';
+import '../profile/profilepage.dart';
+import '../setting/settingpage.dart';
+import '../page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,12 +13,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var currentIndex = 0;
+  final screens = [
+    HomeScreen(),
+    SettingPage(),
+    ProfilePage(),
+  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
     return SafeArea(
         child: Scaffold(
+      //................................
+      body: screens[currentIndex],
+
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(20),
         height: size.width * .155,
@@ -24,21 +36,22 @@ class _HomePageState extends State<HomePage> {
             BoxShadow(
               color: Colors.black.withOpacity(.15),
               blurRadius: 30,
-              offset: Offset(0, 10),
+              offset: const Offset(0, 10),
             ),
           ],
           borderRadius: BorderRadius.circular(50),
         ),
         child: ListView.builder(
-          itemCount: 4,
+          itemCount: 3,
           scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: size.width * .024),
+          padding: EdgeInsets.symmetric(horizontal: size.width * .080),
           itemBuilder: (context, index) => InkWell(
-            onTap: () {
-              setState(
-                () => currentIndex = index,
-              );
-            },
+            onTap: () => setState(() => currentIndex = index),
+            // onTap: () {
+            //   setState(
+            //     () => currentIndex = index,
+            //   );
+            // },
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             child: Column(
@@ -49,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   curve: Curves.fastLinearToSlowEaseIn,
                   margin: EdgeInsets.only(
                     bottom: index == currentIndex ? 0 : size.width * .029,
-                    right: size.width * .0422,
+                    right: size.width * .0722,
                     left: size.width * .0422,
                   ),
                   width: size.width * .128,
@@ -61,9 +74,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+
+                // Icon.......................
                 Icon(
                   listOfIcons[index],
-                  size: size.width * .076,
+                  size: size.width * .079,
                   color: index == currentIndex
                       ? Colors.blueAccent
                       : Colors.black38,
@@ -79,7 +94,6 @@ class _HomePageState extends State<HomePage> {
 
   List<IconData> listOfIcons = [
     Icons.home_rounded,
-    Icons.favorite_rounded,
     Icons.settings_rounded,
     Icons.person_rounded,
   ];

@@ -17,9 +17,12 @@ class MyApp extends StatelessWidget {
       routes: {
         'Splash_Screen': (context) => const SplashScreen(),
         'welcome_screen': (context) =>  WelcomeScreen(),
-        //'signup_screen' :(context) => SignUpScreen(),
-        //'login_screen' : (context) => LoginScreen(),
+        'signup_screen' :(context) => SignupPage(),
+        'login_screen' : (context) => LoginPage(),
         'home_screen': (context) => const HomePage(),
+        'homepage' : (context) =>const HomeScreen(),
+        'setting_page' : (context) => const SettingPage(),
+        'profile_page' : (context) => const ProfilePage(),
       },
     );
   }
