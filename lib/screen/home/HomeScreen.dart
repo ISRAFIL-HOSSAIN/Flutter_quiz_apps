@@ -10,61 +10,172 @@ class HomeScreen extends StatelessWidget {
     var sizeW = MediaQuery.of(context).size.height / 3;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: background,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text('home'),
           backgroundColor: background,
           shadowColor: Colors.transparent,
         ),
         body: Container(
-          child: Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 200,
-                    width: 190,
-                    child: Card(
-                      child: ListTile(
-                          title: Text(
-                        'Bangla',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Color.fromARGB(255, 118, 49, 49),
+          child: Padding(
+            padding: EdgeInsets.all(12.0),
+            child: GridView(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 17,
+                crossAxisSpacing: 17,
+              ),
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'home_screen');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: card1,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 100,
+                          width: 100,
+                          child: Image.asset(
+                            'assets/images/generalpng.png',
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      )),
+                        // Icon(
+                        //   Icons.home,
+                        //   size: 50,
+                        //   color: Colors.white60,
+                        // ),
+                        const Text(
+                          'General',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                ],
-              ),
-              SizedBox(
-                width: 0,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: 200,
-                    width: 190,
-                    child: Card(
-                      child: ListTile(
-                          title: Text(
-                        'Bangla',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'home_screen');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: card2,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 100,
+                          width: 100,
+                          child: Image.asset(
+                            'assets/images/biology.png',
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      )),
+                        // Icon(
+                        //   Icons.home,
+                        //   size: 50,
+                        //   color: Colors.white60,
+                        // ),
+                        const Text(
+                          'Biology',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ],
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'home_screen');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: card3,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 100,
+                          width: 100,
+                          child: Image.asset(
+                            'assets/images/science.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        // Icon(
+                        //   Icons.home,
+                        //   size: 50,
+                        //   color: Colors.white60,
+                        // ),
+                        const Text(
+                          'Science',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'home_screen');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: card4,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 100,
+                          width: 100,
+                          child: Image.asset(
+                            'assets/images/world.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        // Icon(
+                        //   Icons.home,
+                        //   size: 50,
+                        //   color: Colors.white60,
+                        // ),
+                        const Text(
+                          'World',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            
           ),
           
+         
         ),
       ),
     );

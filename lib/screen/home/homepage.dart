@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'HomeScreen.dart';
-import '../profile/profilepage.dart';
-import '../setting/settingpage.dart';
 import '../page.dart';
 
 class HomePage extends StatefulWidget {
