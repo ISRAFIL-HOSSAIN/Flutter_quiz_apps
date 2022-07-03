@@ -7,3 +7,5 @@ export '../models/constant.dart';
 export './home/HomeScreen.dart';
 export './profile/profilepage.dart';
 export './setting/settingpage.dart';
+export './widget/bezierContainer.dart';
+export './widget/customClipper.dart';
