@@ -17,7 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget _signInButton() {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, 'home_screen');
+        Navigator.pushNamed(context, 'login_screen');
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

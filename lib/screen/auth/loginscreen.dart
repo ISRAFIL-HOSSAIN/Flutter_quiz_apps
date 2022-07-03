@@ -12,92 +12,308 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // backButton Widget
 
-  // backButton Widget 
-
-  Widget _backButton(){
+  Widget _backButton() {
     return InkWell(
-      onTap: ()=> Navigator.pop(context),
+      onTap: () => Navigator.pop(context),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10,),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+        ),
         child: Row(children: [
           Container(
-            padding: EdgeInsets.only(left:0,top: 10,bottom: 10),
-            child: Icon(Icons.keyboard_arrow_left,color: Colors.white,),
+            padding: const EdgeInsets.only(left: 0, top: 10, bottom: 10),
+            child: const Icon(
+              Icons.keyboard_arrow_left,
+              color: Color.fromARGB(255, 29, 28, 28),
+            ),
           ),
-          Text('back',
-          style: TextStyle(fontSize: 12,fontWeight: FontWeight.w600,),)
+          const Text(
+            'Back',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+            ),
+          )
         ]),
       ),
     );
   }
 
-  Widget _entryField(String title,{bool isPassword = false}){
+  Widget _entryField(String title, {bool isPassword = false}) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children:<Widget> [
+        children: <Widget>[
           Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,),
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           TextField(
-            obscureText:  ,
+            obscureText: isPassword,
+            decoration: const InputDecoration(
+              border: InputBorder.none,
+              fillColor: Color.fromARGB(255, 241, 239, 239),
+              filled: true,
+            ),
           )
         ],
       ),
     );
   }
 
+  Widget _submitButton() {
+    return InkWell(
+      onTap: () => Navigator.pushNamed(context, 'home_screen'),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(5)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.grey.shade200,
+                  offset: const Offset(2, 4),
+                  blurRadius: 5,
+                  spreadRadius: 2),
+            ],
+            gradient: const LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [Color(0xfffbb448), Color(0xfff7892b)],
+            )),
+        child: const Text(
+          'Login',
+          style: TextStyle(fontSize: 20, color: Colors.white),
+        ),
+      ),
+    );
+  }
 
+  Widget _divider() {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(children: const <Widget>[
+        SizedBox(
+          width: 20,
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Divider(
+              thickness: 1,
+            ),
+          ),
+        ),
+        Text('or'),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
+            child: Divider(
+              thickness: 1,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 20,
+        ),
+      ]),
+    );
+  }
 
+  Widget _title() {
+    return RichText(
+      textAlign: TextAlign.center,
+      text: const TextSpan(
+        text: 'P',
+        style: TextStyle(
+          fontSize: 45,
+          fontWeight: FontWeight.w800,
+          color: Color(0xffe46b10),
+        ),
+        children: [
+          TextSpan(
+            text: 'uti',
+            style: TextStyle(color: Colors.black, fontSize: 30),
+          ),
+          TextSpan(
+            text: 'shala',
+            style: TextStyle(color: Colors.black, fontSize: 30),
+          ),
+        ],
+      ),
+    );
+  }
 
+  Widget _emailPasswordWidget() {
+    return Column(
+      children: <Widget>[
+        _entryField("Email id"),
+        _entryField(
+          "Password",
+          isPassword: true,
+        ),
+      ],
+    );
+  }
+
+  Widget _googleButton() {
+    return InkWell(
+      child: Container(
+        height: 50,
+        margin: const EdgeInsets.symmetric(vertical: 20),
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 234, 221, 221),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                  ),
+                ),
+                alignment: Alignment.center,
+                child: Image.asset('assets/images/google.png',
+                    height: 40, width: 40),
+                // const Text(
+                //   'G',
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: 28,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+              ),
+            ),
+            Expanded(
+              flex: 5,
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Color(0xfffC54238),
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(5),
+                      topRight: Radius.circular(5)),
+                ),
+                alignment: Alignment.center,
+                child: const Text(
+                  'Log in with Google',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _createAccountLabel() {
+    return InkWell(
+      onTap: () => Navigator.pushNamed(context, 'signup_screen'),
+      child: Container(
+          margin: const EdgeInsets.symmetric(vertical: 20),
+          padding: const EdgeInsets.all(15),
+          alignment: Alignment.bottomCenter,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const <Widget>[
+              Text(
+                'Don\'t have an account ?',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                'SignUp',
+                style: TextStyle(
+                  color: Color(0xfff79c4f),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              )
+            ],
+          )),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    return Scaffold(
-        body: Container(
-      height: height,
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            top: -height * .15,
-            right: -MediaQuery.of(context).size.width * .4,
-            child: BezierContainer(),
+    final sizeh = MediaQuery.of(context).size.height;
+    return SafeArea(
+      child: Scaffold(
+        body: SizedBox(
+          height: sizeh,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                top: -sizeh * .15,
+                right: -MediaQuery.of(context).size.width * .4,
+                child: const BezierContainer(),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SingleChildScrollView(
+                    child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SizedBox(height: sizeh * .2),
+                    _title(),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    _emailPasswordWidget(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    _submitButton(),
+                    Container(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      alignment: Alignment.centerRight,
+                      child: const Text(
+                        'Forgot Password ?',
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    _divider(),
+                    _googleButton(),
+                    // SizedBox(
+                    //   height: sizeh * .005,
+                    // ),
+                    _createAccountLabel(),
+                  ],
+                )),
+              ),
+              Positioned(top: 25, left: 0, child: _backButton()),
+            ],
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: SingleChildScrollView(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(height: height * .2), 
-                _title(), 
-                SizedBox(height: 50,),
-                _emailPasswordWidget(), 
-                SizedBox(height: 20,),
-                _submitButton(),
-                Container(padding: EdgeInsets.symmetric(vertical: 10),
-                alignment: Alignment.centerRight,
-                child: Text('Forgot Password ?', 
-                style: TextStyle(fontSize: 14,fontWeight:FontWeight.w500),
-                ),
-                _divider(),
-                _facebookButton(),
-                SizedBox(height: height * .055,),
-                _createAccountLabel(),
-                ),
-              ],
-            )),
-          ),
-          Positioned(top: 40, left: 0, child: _backButton()),
-        ],
+        ),
       ),
-    ),
     );
   }
 }
