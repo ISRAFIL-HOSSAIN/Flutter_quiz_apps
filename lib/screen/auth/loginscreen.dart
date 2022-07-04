@@ -170,6 +170,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _googleButton() {
     return InkWell(
+      onTap: () async => await signWithGoogle(),
       child: Container(
         height: 50,
         margin: const EdgeInsets.symmetric(vertical: 20),

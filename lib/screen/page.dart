@@ -9,3 +9,4 @@ export './profile/profilepage.dart';
 export './setting/settingpage.dart';
 export './widget/bezierContainer.dart';
 export './widget/customClipper.dart';
+export './auth/services/authentication.dart';
