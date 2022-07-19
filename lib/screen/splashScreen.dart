@@ -80,7 +80,7 @@ class _SplashScreenState extends State<SplashScreen>
                 duration: const Duration(milliseconds: 2000),
                 opacity: _textOpacity,
                 child: Text(
-                  'PUTISHALA',
+                  'কুইজখেলি',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

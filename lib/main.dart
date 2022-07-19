@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:quiz_apps/screen/quiz/quizintro.dart';
 import './screen/page.dart';
 
 Future<void> main() async {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: 'Splash_Screen',
-      routes: {
+       routes: {
         'Splash_Screen': (context) => const SplashScreen(),
         'welcome_screen': (context) => WelcomeScreen(),
         'signup_screen': (context) => SignupPage(),
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         'homepage': (context) => const HomeScreen(),
         'setting_page': (context) => const SettingPage(),
         'profile_page': (context) => const ProfilePage(),
-      },
+        'QuizIntro' : (context) => const QuizIntro(),
+       },
     );
   }
 }

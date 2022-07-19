@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, 'home_screen');
+                        Navigator.pushNamed(context, 'QuizIntro');
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, 'home_screen');
+                        Navigator.pushNamed(context, 'QuizIntro');
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -105,7 +105,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, 'home_screen');
+                        Navigator.pushNamed(context, 'QuizIntro');
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -141,7 +141,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, 'home_screen');
+                        Navigator.pushNamed(context, 'QuizIntro');
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -177,7 +177,58 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Row(),
+                Positioned(
+                  bottom: 140,
+                  child: Container(
+                    height: 100,
+                    width: sizeW * 2.8,
+                    // color: Color.fromRGBO(208, 208, 208, 0.451),
+                    child: Card(
+                      elevation: 5,
+                      color: Color.fromARGB(255, 224, 224, 224),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 12),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text('কীভাবে কাজ করবেন ভিডিও ',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 70, 131, 237),
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.center),
+                                Text(
+                                    'অ্যাপ সম্পর্কে বিস্তারিত সব তথ্য পাবেন ভিডিওতে ',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 123, 122, 122),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.center),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 60,
+                            width: 60,
+                            child: Image.asset(
+                              'assets/images/biology.png',
+                              fit: BoxFit.cover,
+                              alignment: Alignment.centerRight,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

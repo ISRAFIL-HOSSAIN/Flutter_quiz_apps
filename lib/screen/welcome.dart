@@ -94,7 +94,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return RichText(
         textAlign: TextAlign.center,
         text: TextSpan(
-            text: 'P',
+            text: 'কু',
             style: GoogleFonts.portLligatSans(
               textStyle: Theme.of(context).textTheme.headline1,
               fontSize: 60,
@@ -103,19 +103,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             children: const [
               TextSpan(
-                text: 'uti',
+                text: 'ইজ',
                 style: TextStyle(
                     color: Color.fromARGB(255, 66, 30, 30), fontSize: 35),
               ),
               TextSpan(
-                text: 'sha',
+                text: 'খেলি',
                 style: TextStyle(
                     color: Color.fromARGB(255, 227, 247, 246), fontSize: 35),
-              ),
-              TextSpan(
-                text: 'la',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 56, 123, 238), fontSize: 35),
               ),
             ]));
   }
