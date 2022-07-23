@@ -15,20 +15,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: 'Splash_Screen',
-       routes: {
-        'Splash_Screen': (context) => const SplashScreen(),
-        'welcome_screen': (context) => WelcomeScreen(),
-        'signup_screen': (context) => SignupPage(),
-        'login_screen': (context) => LoginPage(),
-        'home_screen': (context) => const HomePage(),
-        'homepage': (context) => const HomeScreen(),
-        'setting_page': (context) => const SettingPage(),
-        'profile_page': (context) => const ProfilePage(),
-        'QuizIntro' : (context) => const QuizIntro(),
-       },
+    return Over(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: 'Splash_Screen',
+         routes: {
+          'Splash_Screen': (context) => const SplashScreen(),
+          'welcome_screen': (context) => WelcomeScreen(),
+          'signup_screen': (context) => SignupPage(),
+          'login_screen': (context) => LoginPage(),
+          'home_screen': (context) => const HomePage(),
+          'homepage': (context) => const HomeScreen(),
+          'setting_page': (context) => const SettingPage(),
+          'profile_page': (context) => const ProfilePage(),
+          'QuizIntro' : (context) => const QuizIntro(),
+         },
+      ),
     );
   }
 }

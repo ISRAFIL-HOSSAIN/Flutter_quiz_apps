@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_apps/screen/auth/services/InternetConnection.dart';
 import '../page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,6 +13,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  @override
+  void initState() {
+    super.initState();
+    Internet().checkInternetCon();
+  }
   // backButton Widget
 
   Widget _backButton() {
