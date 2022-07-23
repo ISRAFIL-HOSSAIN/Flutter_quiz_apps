@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:overlay_support/overlay_support.dart';
 import 'package:quiz_apps/screen/auth/services/InternetConnection.dart';
 import '../page.dart';
 
@@ -16,10 +18,15 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    Internet().checkInternetCon();
+    InternetConnectionChecker().onStatusChange.listen((status) {
+      final connected = status == InternetConnectionStatus.connected;
+      showSimpleNotification(
+          Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
+          background: Colors.green);
+    });
   }
-  // backButton Widget
 
+  // backButton Widget
   Widget _backButton() {
     return InkWell(
       onTap: () => Navigator.pop(context),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:overlay_support/overlay_support.dart';
+import './auth/services/firedb.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key, this.title}) : super(key: key);
@@ -12,6 +14,17 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    InternetConnectionChecker().onStatusChange.listen((status) {
+      final connected = status == InternetConnectionStatus.connected;
+      showSimpleNotification(
+          Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
+          background: Colors.green);
+          print("Internet Connection not connected");
+    });
+  }
   // SubmitButton .........................
 
   Widget _signInButton() {
@@ -77,7 +90,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         SizedBox(
           height: 20,
         ),
-        Icon(Icons.fingerprint, size: 90, color: Color.fromARGB(147, 249, 255, 255)),
+        Icon(Icons.fingerprint,
+            size: 90, color: Color.fromARGB(147, 249, 255, 255)),
         Text(
           'Touch ID',
           style: TextStyle(

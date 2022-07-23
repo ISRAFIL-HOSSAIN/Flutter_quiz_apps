@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:overlay_support/overlay_support.dart';
 import '../page.dart';
 
 class SignupPage extends StatefulWidget {
@@ -9,6 +11,17 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  @override
+  void initState() {
+    super.initState();
+    InternetConnectionChecker().onStatusChange.listen((status) {
+      final connected = status == InternetConnectionStatus.connected;
+      showSimpleNotification(
+          Text(connected ? "CONNECTED TO INTERNET" : "NO INTERNET"),
+          background: Colors.green);
+    });
+  }
+
   Widget _backButton() {
     return InkWell(
       onTap: () => Navigator.pop(context),

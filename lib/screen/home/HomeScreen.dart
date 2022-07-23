@@ -208,7 +208,7 @@ class HomeScreen extends StatelessWidget {
                                     'অ্যাপ সম্পর্কে বিস্তারিত সব তথ্য পাবেন ভিডিওতে ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 123, 122, 122),
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.w600,
                                     ),
                                     textAlign: TextAlign.center),
@@ -216,10 +216,10 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 60,
-                            width: 60,
+                            height: sizeh * 0.06,
+                            width: sizeW * .55,
                             child: Image.asset(
-                              'assets/images/biology.png',
+                              'assets/images/youtube.png',
                               fit: BoxFit.cover,
                               alignment: Alignment.centerRight,
                             ),
