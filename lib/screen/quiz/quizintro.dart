@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quiz.dart';
 
 class QuizIntro extends StatelessWidget {
   const QuizIntro({Key? key}) : super(key: key);
@@ -16,7 +17,9 @@ class QuizIntro extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'Question');
+        },
       ),
       appBar: AppBar(
         title: Text("কুইজখেলি"),

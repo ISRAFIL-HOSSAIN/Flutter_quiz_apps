@@ -7,15 +7,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var sizeW = MediaQuery.of(context).size.width / 3;
+    var sizeW = MediaQuery.of(context).size.width;
     var sizeh = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 231, 241, 244),
         appBar: AppBar(
           title: const Text('home'),
           backgroundColor: background,
-          shadowColor: Colors.transparent,
+          //shadowColor: Colors.transparent,
         ),
         body: Container(
           height: sizeh,
@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                     crossAxisCount: 2,
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 20,
-                    childAspectRatio: (1 / .8),
+                    childAspectRatio: (1 / .7),
                   ),
                   children: [
                     InkWell(
@@ -37,19 +37,22 @@ class HomeScreen extends StatelessWidget {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: card1,
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
-                              height: 100,
-                              width: 100,
+                              height: 60,
+                              width: 60,
                               child: Image.asset(
                                 'assets/images/generalpng.png',
                                 fit: BoxFit.cover,
                               ),
+                            ),
+                            const SizedBox(
+                              height: 5,
                             ),
                             // Icon(
                             //   Icons.home,
@@ -59,8 +62,9 @@ class HomeScreen extends StatelessWidget {
                             const Text(
                               'General',
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 28,
+                                color: Color.fromARGB(190, 31, 30, 30),
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
                               ),
                             )
                           ],
@@ -73,19 +77,22 @@ class HomeScreen extends StatelessWidget {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: card2,
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
-                              height: 100,
-                              width: 100,
+                              height: 60,
+                              width: 60,
                               child: Image.asset(
                                 'assets/images/biology.png',
                                 fit: BoxFit.cover,
                               ),
+                            ),
+                            const SizedBox(
+                              height: 5,
                             ),
                             // Icon(
                             //   Icons.home,
@@ -95,8 +102,9 @@ class HomeScreen extends StatelessWidget {
                             const Text(
                               'Biology',
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 28,
+                                color: Color.fromARGB(190, 31, 30, 30),
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
                               ),
                             )
                           ],
@@ -110,18 +118,21 @@ class HomeScreen extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: card3,
+                          color: Colors.white,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
-                              height: 100,
-                              width: 100,
+                              height: 60,
+                              width: 60,
                               child: Image.asset(
                                 'assets/images/science.png',
                                 fit: BoxFit.cover,
                               ),
+                            ),
+                            const SizedBox(
+                              height: 5,
                             ),
                             // Icon(
                             //   Icons.home,
@@ -131,8 +142,9 @@ class HomeScreen extends StatelessWidget {
                             const Text(
                               'Science',
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 28,
+                                color: Color.fromARGB(190, 31, 30, 30),
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
                               ),
                             )
                           ],
@@ -146,14 +158,14 @@ class HomeScreen extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: card4,
+                          color: Colors.white,
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SizedBox(
-                              height: 100,
-                              width: 100,
+                              height: 60,
+                              width: 60,
                               child: Image.asset(
                                 'assets/images/world.png',
                                 fit: BoxFit.cover,
@@ -167,8 +179,9 @@ class HomeScreen extends StatelessWidget {
                             const Text(
                               'World',
                               style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 28,
+                                color: Color.fromARGB(190, 31, 30, 30),
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
                               ),
                             )
                           ],
@@ -178,18 +191,20 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 Positioned(
-                  bottom: 140,
+                  bottom: 40,
                   child: Container(
-                    height: 100,
-                    width: sizeW * 2.8,
+                    height: 80,
+                    width: 340,
+
                     // color: Color.fromRGBO(208, 208, 208, 0.451),
                     child: Card(
-                      elevation: 5,
-                      color: Color.fromARGB(255, 224, 224, 224),
+                      elevation: 2,
+                      color: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -200,24 +215,24 @@ class HomeScreen extends StatelessWidget {
                                 Text('কীভাবে কাজ করবেন ভিডিও ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 70, 131, 237),
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700,
                                     ),
                                     textAlign: TextAlign.center),
                                 Text(
                                     'অ্যাপ সম্পর্কে বিস্তারিত সব তথ্য পাবেন ভিডিওতে ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 123, 122, 122),
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                     textAlign: TextAlign.center),
                               ],
                             ),
                           ),
                           SizedBox(
-                            height: sizeh * 0.06,
-                            width: sizeW * .55,
+                            height: 30,
+                            width: 45,
                             child: Image.asset(
                               'assets/images/youtube.png',
                               fit: BoxFit.cover,

@@ -1,17 +1,7 @@
-class Question {
-  final String id;
-  final String title;
-  final Map<String, bool> options;
+class QuestionModel {
+  String? question;
+  Map<String, bool>? answer;
 
-  Question({
-    required this.id,
-    required this.title,
-    required this.options,
-  });
-
-@override 
-String toString(){
-  return 'Question(id: $id,$title,options: $options)';
+  // Creating the constructor
+  QuestionModel(this.question, this.answer);
 }
-}
-

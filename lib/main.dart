@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_apps/screen/quiz/quizintro.dart';
 import './screen/page.dart';
 import 'package:overlay_support/overlay_support.dart';
+import './screen/quiz/quiz.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,8 @@ class MyApp extends StatelessWidget {
           'setting_page': (context) => const SettingPage(),
           'profile_page': (context) => const ProfilePage(),
           'QuizIntro': (context) => const QuizIntro(),
+
+          'Question' : (context) => const QuizQuestion(),
         },
       ),
     );

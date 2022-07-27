@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const Color mainColor = Color(0xFF252c4a); 
+const Color secondColor = Color(0xFF117eeb); 
 const Color correct = Color(0xFF32AB58);
 const Color incorrect = Color.fromARGB(255, 239, 63, 4);
 const Color neutral = Color.fromARGB(255, 218, 245, 227);
