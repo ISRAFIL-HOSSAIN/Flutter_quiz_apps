@@ -3,7 +3,7 @@ export 'welcome.dart';
 export './auth/loginscreen.dart';
 export './auth/signupscreen.dart';
 export './home/homepage.dart';
-export '../models/constant.dart';
+export '../component/constant.dart';
 export './home/HomeScreen.dart';
 export './profile/profilepage.dart';
 export './setting/settingpage.dart';

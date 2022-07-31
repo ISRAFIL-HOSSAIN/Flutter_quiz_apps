@@ -148,21 +148,32 @@ class _LoginPageState extends State<LoginPage> {
   Widget _title() {
     return RichText(
       textAlign: TextAlign.center,
-      text: const TextSpan(
-        text: 'P',
-        style: TextStyle(
-          fontSize: 45,
-          fontWeight: FontWeight.w800,
-          color: Color(0xffe46b10),
+      text: TextSpan(
+        text: 'কু',
+        style: GoogleFonts.portLligatSans(
+          textStyle: Theme.of(context).textTheme.headline1,
+          fontSize: 50,
+          fontWeight: FontWeight.w700,
+          color: const Color.fromARGB(255, 97, 47, 47),
         ),
         children: [
           TextSpan(
-            text: 'uti',
-            style: TextStyle(color: Colors.black, fontSize: 30),
+            text: 'ইজ',
+            style: GoogleFonts.portLligatSans(
+              textStyle: Theme.of(context).textTheme.headline1,
+              fontSize: 25,
+              fontWeight: FontWeight.w700,
+              color: const Color.fromARGB(255, 66, 30, 30),
+            ),
           ),
           TextSpan(
-            text: 'shala',
-            style: TextStyle(color: Colors.black, fontSize: 30),
+            text: 'খেলি',
+            style: GoogleFonts.portLligatSans(
+              textStyle: Theme.of(context).textTheme.headline1,
+              fontSize: 25,
+              fontWeight: FontWeight.w700,
+              color: Color.fromARGB(255, 238, 156, 14),
+            ),
           ),
         ],
       ),
@@ -295,10 +306,10 @@ class _LoginPageState extends State<LoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: sizeh * .2),
+                    SizedBox(height: sizeh * .18),
                     _title(),
                     const SizedBox(
-                      height: 50,
+                      height: 30,
                     ),
                     _emailPasswordWidget(),
                     const SizedBox(

@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:quiz_apps/screen/quiz/quizintro.dart';
-import './screen/page.dart';
+import 'package:get/get.dart';
 import 'package:overlay_support/overlay_support.dart';
+
+import './screen/page.dart';
 import './screen/quiz/quiz.dart';
 
 Future<void> main() async {
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OverlaySupport.global(
-      child: MaterialApp(
+      
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: 'Splash_Screen',
         routes: {
@@ -32,9 +34,10 @@ class MyApp extends StatelessWidget {
           'homepage': (context) => const HomeScreen(),
           'setting_page': (context) => const SettingPage(),
           'profile_page': (context) => const ProfilePage(),
-          'QuizIntro': (context) => const QuizIntro(),
-
-          'Question' : (context) => const QuizQuestion(),
+          'QuizIntro': (context) =>  QuizIntro(),
+          //'Question' : (context) => const QuizQuestion(),
+          //'Prize': (context) => PrizeScreen(),
+          'Bquesiton': (context) => const BquizScreen(),
         },
       ),
     );

@@ -18,7 +18,7 @@ class QuizIntro extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'Question');
+          Navigator.pushNamed(context, 'Bquesiton');
         },
       ),
       appBar: AppBar(

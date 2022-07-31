@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
 
-import '../../models/constant.dart';
+import '../../component/constant.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var sizeW = MediaQuery.of(context).size.width;
     var sizeh = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 231, 241, 244),
+        backgroundColor: const Color.fromARGB(255, 231, 241, 244),
         appBar: AppBar(
-          title: const Text('home'),
+          title: const Text(
+            'Home',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+          ),
+          actions: <Widget>[
+            IconButton(
+                icon: const Icon(Icons.notification_add_rounded),
+                onPressed: () {}),
+          ],
+          centerTitle: true,
+          automaticallyImplyLeading: false,
           backgroundColor: background,
-          //shadowColor: Colors.transparent,
         ),
+        //shadowColor: Colors.transparent,
+
         body: Container(
           height: sizeh,
           child: Padding(
@@ -31,13 +41,14 @@ class HomeScreen extends StatelessWidget {
                     childAspectRatio: (1 / .7),
                   ),
                   children: [
+                    // Card 1
                     InkWell(
                       onTap: () {
                         Navigator.pushNamed(context, 'QuizIntro');
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(20),
                           color: Colors.white,
                         ),
                         child: Column(
@@ -62,9 +73,9 @@ class HomeScreen extends StatelessWidget {
                             const Text(
                               'General',
                               style: TextStyle(
-                                color: Color.fromARGB(190, 31, 30, 30),
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(188, 51, 50, 50),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
                               ),
                             )
                           ],
@@ -77,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(20),
                           color: Colors.white,
                         ),
                         child: Column(
@@ -87,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                               height: 60,
                               width: 60,
                               child: Image.asset(
-                                'assets/images/biology.png',
+                                'assets/images/bio.jpg',
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -102,15 +113,16 @@ class HomeScreen extends StatelessWidget {
                             const Text(
                               'Biology',
                               style: TextStyle(
-                                color: Color.fromARGB(190, 31, 30, 30),
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(188, 51, 50, 50),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
                               ),
                             )
                           ],
                         ),
                       ),
                     ),
+                    //Card 2
                     InkWell(
                       onTap: () {
                         Navigator.pushNamed(context, 'QuizIntro');
@@ -142,15 +154,16 @@ class HomeScreen extends StatelessWidget {
                             const Text(
                               'Science',
                               style: TextStyle(
-                                color: Color.fromARGB(190, 31, 30, 30),
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(188, 51, 50, 50),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
                               ),
                             )
                           ],
                         ),
                       ),
                     ),
+                    //Card - 3
                     InkWell(
                       onTap: () {
                         Navigator.pushNamed(context, 'QuizIntro');
@@ -171,6 +184,9 @@ class HomeScreen extends StatelessWidget {
                                 fit: BoxFit.cover,
                               ),
                             ),
+                            const SizedBox(
+                              height: 5,
+                            ),
                             // Icon(
                             //   Icons.home,
                             //   size: 50,
@@ -179,9 +195,9 @@ class HomeScreen extends StatelessWidget {
                             const Text(
                               'World',
                               style: TextStyle(
-                                color: Color.fromARGB(190, 31, 30, 30),
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(188, 51, 50, 50),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
                               ),
                             )
                           ],
@@ -191,9 +207,9 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 Positioned(
-                  bottom: 40,
+                  bottom: 22 * 0,
                   child: Container(
-                    height: 80,
+                    height: 85,
                     width: 340,
 
                     // color: Color.fromRGBO(208, 208, 208, 0.451),
@@ -201,7 +217,7 @@ class HomeScreen extends StatelessWidget {
                       elevation: 2,
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
+                          borderRadius: BorderRadius.circular(0)),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
